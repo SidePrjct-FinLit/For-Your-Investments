@@ -1,8 +1,9 @@
 import Head from 'next/head'
 import Header from './header'
 import 'fontsource-roboto';
+import { Children } from 'react';
 
-function Layout() {
+function Layout({children}) {
   return (
     <>
       <Head>
@@ -13,7 +14,7 @@ function Layout() {
       <Header/>
 
       <main>
-        <div className="container"></div>
+        <div className="container">{children}</div>
       </main>
 
       <style jsx>{`
