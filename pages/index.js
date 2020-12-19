@@ -21,6 +21,8 @@ const useStyles = makeStyles((theme) => ({
         height: 240,
     },
     xmlid: {
+        marginLeft: "auto",
+        marginRight: "auto",
         paddingTop: 80,
         paddingBottom: 80,
         paddingLeft:95,
