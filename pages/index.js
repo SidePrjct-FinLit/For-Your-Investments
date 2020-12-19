@@ -21,8 +21,6 @@ const useStyles = makeStyles((theme) => ({
         height: 240,
     },
     xmlid: {
-        marginLeft: "auto",
-        marginRight: "auto",
         paddingTop: 80,
         paddingBottom: 80,
         paddingLeft:95,
@@ -36,8 +34,8 @@ export default function Home() {
 
     return (
         <div className={classes.root}>
-          <Grid container spacing={1}>
-            <Grid container item lg={12}>
+          <Grid container spacing={1} justify="center" alignItems="center">
+            <Grid container item lg={12} justify="center" alignItems="center">
                 <Grid item lg={6}>
                     <img className={classes.xmlid} src={"home/XMLID.jpg"} alt={"xmlid"} width={"300"}></img>
                 </Grid>
