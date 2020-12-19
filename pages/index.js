@@ -6,7 +6,7 @@ import Card from '@material-ui/core/Card';
 // TODO: replace Paper with something generic, like div?
 const useStyles = makeStyles((theme) => ({
     root: {
-        flexGrow: 1,     // TODO: 100% width of parent 
+        flexGrow: 0,     // TODO: 100% width of parent 
     },
     
     grey_grid: {
@@ -17,6 +17,13 @@ const useStyles = makeStyles((theme) => ({
         width: 360,
         height: 240,
     },
+    xmlid: {
+        paddingTop: 80,
+        paddingBottom: 80,
+        paddingLeft:95,
+        paddingRight: 95,
+        backgroundColor: "#3C5940",
+    }
   }));
 
 export default function Home() {
@@ -27,7 +34,7 @@ export default function Home() {
           <Grid container spacing={1}>
             <Grid container item lg={12}>
                 <Grid item lg={6}>
-                    <img src={"home/lincoln.png"} alt={"lincoln"} width={"240"}></img>
+                    <img className={classes.xmlid} src={"home/XMLID.jpg"} alt={"xmlid"} width={"300"}></img>
                 </Grid>
                 <Grid item lg={6}>
                 <p>It's time to learn</p>
