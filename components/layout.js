@@ -21,8 +21,6 @@ function Layout({children}) {
         .container {
           max-width: 1440px;
           margin: 1.5rem auto;
-          display: flex;
-          justify-content: center;
         }
       `}</style>
       <style jsx global>{`
@@ -30,7 +28,6 @@ function Layout({children}) {
           margin: 0;
           color: #333;
           font-family: Roboto, 'Open Sans', 'Helvetica Neue', sans-serif;
-          display: flex;
         }
       `}</style>
     </>
