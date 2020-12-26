@@ -1,65 +1,85 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import Layout from '../components/layout'
+import { makeStyles } from '@material-ui/core/styles';
+import Grid from '@material-ui/core/Grid';
+import Card from '@material-ui/core/Card';
+import Button from '@material-ui/core/Button';
+import Link from 'next/link';
+
+
+// TODO: replace Paper with something generic, like div?
+const useStyles = makeStyles((theme) => ({
+    root: {
+        flexGrow: 0,     // TODO: 100% width of parent 
+    },
+    
+    grey_grid: {
+        backgroundColor: "#F2F2F2",
+    },
+
+    feature_card: {
+        width: 360,
+        height: 240,
+    },
+    xmlid: {
+        paddingTop: 80,
+        paddingBottom: 80,
+        paddingLeft:95,
+        paddingRight: 95,
+        backgroundColor: "#3C5940",
+    }
+  }));
 
 export default function Home() {
-  return (
-    <div className={styles.container}>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+    const classes = useStyles();
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
+    return (
+        <div className={classes.root}>
+          <Grid container spacing={1} justify="center" alignItems="center">
+            <Grid container item lg={12} justify="center" alignItems="center">
+                <Grid item lg={6}>
+                    <img className={classes.xmlid} src={"home/XMLID.jpg"} alt={"xmlid"} width={"300"}></img>
+                </Grid>
+                <Grid item lg={6}>
+                <p>It's time to learn</p>
+                <Link href="/after-register" passHref>
+                    <Button variant="contained" color="secondary">Sign Up</Button>
+                </Link>
+                </Grid>
+            </Grid>
+            <Grid className={classes.grey_grid} container item lg={12}>
+                <Grid item lg={6}>
+                <p>Feature that is amazing</p>
+                </Grid>
+                <Grid item lg={6}>
+                    <Card className={classes.feature_card}>
 
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
+                    </Card>
+                </Grid>
+            </Grid>
+            <Grid container item lg={12}>
+                <Grid item lg={6}>
+                <p>feature box</p>
+                </Grid>
+                <Grid item lg={6}>
+                <p>Feature that is amazing</p>
+                </Grid>
+            </Grid>
+            <Grid className={classes.grey_grid} container item lg={12}>
+                <Grid item lg={6}>
+                <p>Feature that is amazing</p>
+                </Grid>
+                <Grid item lg={6}>
+                <p>feature box</p>
+                </Grid>
+            </Grid>
+            <Grid container item lg={12}>
+                <Grid item lg={12}>
+                <p>footer</p>
+                </Grid>
+            </Grid>
+          </Grid>
         </div>
-      </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
-    </div>
-  )
+      );
 }
+
+Home.Layout = Layout;
