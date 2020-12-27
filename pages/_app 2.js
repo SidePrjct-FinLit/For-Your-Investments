@@ -1,5 +1,4 @@
 // import '../styles/globals.css'
-import '../styles/anima.scss';
 import Layout from '../components/layout'
 
 function MyApp({ Component, pageProps }) {
