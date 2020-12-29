@@ -1,16 +1,13 @@
-import nc from 'next-connect';
-import { getQuizs} from '@/database/index';
+import { CircularProgress } from "@material-ui/core";
+import { connectToDatabase } from "../../util/mongodb";
 
-const handler = nc();
+export default async (req, res) => {
+  const { db } = await connectToDatabase();
 
-handler.use(all);
+  const quizs = await db
+  .collection("quiz")
+  .find({})
+  .toArray();
 
-handler.get(async (req, res) => {
-    const quizs = await getQuizs(
-      req.db
-    );
-
-    res.send({ quizs });
-  });
-
-  export default handler;
+  res.json(quizs);
+};
