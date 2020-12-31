@@ -5,11 +5,13 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "stop": "pkill --signal SIGINT App"
   },
   "dependencies": {
     "@material-ui/core": "^4.11.2",
     "fontsource-roboto": "^3.1.5",
+    "mongodb": "^3.6.3",
     "next": "10.0.3",
     "react": "17.0.1",
     "react-dom": "17.0.1",
